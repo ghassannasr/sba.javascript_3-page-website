@@ -1,3 +1,6 @@
+
+loadCDNs();
+
 function writeFooterHTML() {
   document.write(`
     <div class="gn-footer">
@@ -7,6 +10,21 @@ function writeFooterHTML() {
   `);
 
 }
+
+function loadCDNs() {
+  document.write(`
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">  
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto:wght@300&display=swap"
+      rel="stylesheet">
+`);
+
+
+
+}
+
+
 
 function writeNavbarHTML() {
 
@@ -32,7 +50,7 @@ function writeNavbarHTML() {
               Parks
                 </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Map</a>
+              <a class="dropdown-item" href="./map.html">Map</a>
               <a class="dropdown-item" href="#">Parks</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
@@ -51,3 +69,5 @@ function writeNavbarHTML() {
       </div>
   `);
 }
+
+
