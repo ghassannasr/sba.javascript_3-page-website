@@ -1,35 +1,57 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-family: 'Special Elite', cursive;
 }
-
 
 body, html {
   height: 100%;
 }
-.bg {
-  /* The image used */
 
-/*  background-image: "url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");" */
-  background-image: url("../img/blossom-bg.jpeg");
+.gn-bg-img {
  
- /* 
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-*/
-
-  
-  /* Full height */
+  background-image: url("../img/blossom-bg.jpeg");
   height: 100%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
+  opacity: 60%;
 }
 
-.bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+
+
+.gn-intro-text {
+  font-family: 'Special Elite', cursive;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  font-size: 5vw;
+  top: 40%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.gn-footer {
+  border-top: 2px;
+  background-color: rgb(209, 227, 255);
+  border-top-color: transparent;
+}
+
+.gn-white-font-bg {
+  color: white;
+  -webkit-text-stroke: .3px black;
+}
+
+.gn-dark-font-bg {
+  color: rgb(37, 5, 41);
+  -webkit-text-stroke: .1px black;
+}
+/*
+.bg-text2 {
+
+  background-color: rgba(0,0,0, 0.4); 
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
@@ -43,6 +65,20 @@ body, html {
   text-align: center;
 }
 
-.gn-footer {
-  background-color: lightpink;
+@keyframes intro-animation3 {
+  0% {font-size:600%; opacity:1; content: "Charleston Parks"}
+  25% {font-size:570%; opacity:0;}
+  50% {font-size:600%; opacity:1; content: "A thing of beauty"}
+  65% {font-size:570%; opacity:0;}
+  80% {font-size:600%; opacity:1; content: "A time to remember"}
+  90% {font-size:570%; opacity:0;}
+  100% {font-size:600%;opacity:1; content: "Forver!"}
 }
+
+@keyframes intro-animation2 {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
+}
+*/
