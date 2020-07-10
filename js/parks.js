@@ -6,7 +6,7 @@ parkSearchButton.addEventListener('click', getParkInfo);
 async function getParkInfo() {
   let result;
   try {
-    let parkInfo = await fetchParkInfoFromAPI();
+    let parkInfo = await fetchParkInfoFromAPI2();
     //console.log(result);
     //alert("success");
     result = parkInfo;
@@ -40,4 +40,8 @@ function fetchParkInfoFromAPI() {
   });
 }
 
-
+function fetchParkInfoFromAPI2() {
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+}

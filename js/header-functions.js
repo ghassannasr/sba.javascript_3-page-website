@@ -32,9 +32,7 @@ function writeNavbarHtml() {
               <a class="dropdown-item" href="#">Lodging</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+
         </ul>
         
       </div>
@@ -49,7 +47,6 @@ function writeFooterHTML() {
     </div>
   
   `);
-
 }
 
 function loadCDNs() {
