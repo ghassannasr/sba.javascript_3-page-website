@@ -43,7 +43,7 @@ function writeNavbarHtml() {
 function writeFooterHTML() {
   document.write(`
     <div class="gn-footer">
-      This a beautiful footer. Extends farther probably 
+      I'm a footer, but I'm proud -- Ghassan Nasr 
     </div>
   
   `);
