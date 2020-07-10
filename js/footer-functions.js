@@ -1,4 +1,6 @@
+
 loadBootstrapScripts();
+
 
 function loadBootstrapScripts() {
   document.write(`
@@ -14,3 +16,4 @@ function loadBootstrapScripts() {
   `);
 
 }
+
