@@ -9,16 +9,27 @@ querySearchCodes = {
 }
 
 function makeAsynchronousRequestToWebserver() {
-  var xmlhttp = new XMLHttpRequest();
+  let xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      writeResultsToNewWindow(this.responseText);
+      writeResultsToDiv(this.responseText);
     }
   };
 
+  let sc = document.getElementById("gn-outdoor-categories");
+  let searchCategory = sc.options[sc.selectedIndex].text.split(" ").join("").toLowerCase();
+  let ss = document.getElementById("gn-state-locations");
+  let searchState = ss.options[ss.selectedIndex].text;
+
+  let apiKey = "qYFp1dJ1RrZI22xXBoLNe6G1iipJubnyLnBfQ4yY";
+  queryString =`https://developer.nps.gov/api/v1/${searchCategory}?stateCode=${searchState}&api_key=${apiKey}`;
+
+  console.log(searchCategory, searchState);
+
+
   //get query parameters
   
-  xmlhttp.open("GET", "https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=qYFp1dJ1RrZI22xXBoLNe6G1iipJubnyLnBfQ4yY", true);
+  xmlhttp.open("GET", queryString, true);
   xmlhttp.send();
 }
 
@@ -27,6 +38,12 @@ function writeResultsToNewWindow(response) {
   var html = `<html><head>${response}</head><body>`;
   newWindow .document.open();
   newWindow .document.write(response);
+}
+
+function writeResultsToDiv(response) {
+  let outputDiv = document.getElementById("gn-output-pane");
+  outputDiv.style.height = "auto";
+  outputDiv.innerHTML = response;
 }
 
 /*
