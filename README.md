@@ -2,106 +2,37 @@
 
 
 
-### Description
-* In this Skill-based Assessment, you will be creating a small website and you get to pick what is the website about. The main purpose of this SBA is to test your skills in implementing a clean HTML structure that follows the methodologies of visual design, and styling your site so that it is user-friendly.
+### General Description & Navigation
+* For this assignment I implemented a 3-page mini website as a celebration of parks in Charleston, SC, and parks in general. 
 
-* You have the entire day for this SBA. Make sure to check in with your instructor for approval of your idea. Your work will be graded based on the below technical requirements. Also, creativity always works in your favor.
+* I wanted the look and feel of the pages to reflect the vibrance of spring in Charleston ... beautiful blue skies and the colors of cherry and almond blossoms. 
 
-* Since this is your first time creating a 3 page website, keep it simple. Keeping it simple is very important. It ensures that you can complete this project within the given time and also gives you a better idea of what can you get done in the given time if you were to do it again with more requirements.
+* The entry page is simple. It has a fully-responsive navbar and content, including a little footer. I spent some time experimenting with ways of laying out text on the blue sky, trying to immitate the feel of clouds.
 
-* Once you got your idea, think in the user’s perspective when creating the website.  You like your users to have a good experience when interacting with your site. This gives you a better chance of users trusting your site and coming back for more. For this SBA, don’t worry too much about the content. There are many places you can get free content to display on your site. Concentrate more on the web site's structure and grid system.
+* There are two navigation links at the top that link to other pages: 1) A "Register" link to a page for signing up for a newsletter, and 2) a link in the dropdown to the "Parks" page that provides an interface to an API endpoint at the National Park Service here: https://www.nps.gov/subjects/developer/api-documentation.htm#/visitorcenters/getVisitorCenters . The other links are provided but not implemented.
 
+  * The nav bar at the top has identical html on every page of the website. I therefore produce the nav bar html in a utility script residing in header-functions.js, and I call that function from withing <script> tags near the top of the html body. I am not sure it is best practice to do so, but it certainly helped me in removing the clutter in the pages I was working with.
 
-* Some resources for free content:
-  * Photos: `https://www.pexels.com/search/template/`
-  * Text: `https://www.lipsum.com/`
-  * GIFs: `https://www.motionelements.com/stock-image-10116013-business-and-startup-4k`
+  * I also included the three Bootstrap links at the bottom of each in a similar utility function residing in footer-function.js that is called at the bottom of each page.
 
-* Useful API sites:
-  * https://rapidapi.com/ (Links to an external site.)
-  * https://any-api.com/ (Links to an external site.)
-  * https://github.com/toddmotto/public-apis#public-apis- (Links to an external site.)
-  * https://apilist.fun/
+  * If JavaScript is needed during page loading, I included it in header-functions.js. Otherwise I included it in footer-functions.js.
 
-### Deliverable:
-* A theme for your site that you feel comfortable with
-  * Complete all technical requirements for HTML, CSS, and Javascript
-  * Have markups of your pages
-  * Research for a public API that can provide you with content (Optional)
-  * Include a README file. The file should include technical specifications and description of your website.
-  * Host on GitHub,  include the link to your GitHub account in the README file(optional)
-  * Submit the project in a ZIP file
+### Bootstrap
 
+* I have been waiting for the opportunity to learn higher level, responsive html that allows me to think in aesthetically pleasing ways that also allow for flexibility. And thus my use of Bootstrap. It took a disproportionate amount of my time, but I think it was worth the challenge in terms of future utility.
 
+* I feel I have finally understood the power of Bootstrap, thanks to this assignment. I now have a good conceptual understanding of the grid system, which looks deceivingly similar to "tables" in its syntax of "rows" and "columns". One of the insights I have gained is that content always resides in Bootstrap columns. Resist the temptation to place content in a row! A column is where responsiveness is implemented. Create a column, even if a single column, before adding page content. Bootstrap is about the trinity of container, row, and column.
 
+* My next challenge was to experiment in ways of customizing Bootstrap without sacrificing its power, which is its responsive design. My process consisted of adding selectors piecemeal and repeatedly checking to make sure that smooth responsive functionality was not sacrificed. The text I added on the cherry blossom background on the first page is not fully responsive. In order to keep track of the html selectors I added, I prefixed each selector I created with my initials: "gn".
 
-## Technical requirements
+* I experimented with creating an image background to smooth the edges of Bootstrap components and create continuity that would maintain the power of Bootstrap without necessarily being beholden to its "blocky" look. The newsletter registration page is an example. It contains a Jumbotron and a form on the page, but the background image effaces the component boundaries.  
 
-* HTML
-  * Have at least 3 pages, keep the grid system consistent as much as possible
-  * Use at least 10 different HTML tags
-  * Use HTML tables
-  * Implement at least two uses for forms
-  * Dropped Down Menu 
-  * Use web fonts
-  * Use different types of content in the form of text, images, videos, and GIFs
-  * Use regex validation
+### Forms
 
-* CSS
-  * Inline, internal, and external styling
-  * Use five different CSS selectors
-  * Don’t use too many fonts
-  * Use colors that complement each other
-  * Use Flexbox (Optional)
-  * Use SASS/SCSS (Optional)
-  * Use animations (Optional)
+* I created two forms, one for registering for a newsletter, and another for doing a search that utilizes the National Park Service API.
 
-* Javascript
-  * External scripts
-  * Use variables, if statements, loops, at least one form of collections, functions/call back, and events
-  * Use AJAX (Optional) 
-  * Use JSON or XML (Optional)
-  * Use JQuery (Optional)
+  * My implementation of form validation on the newsletter form is minimal. I tested the functionality of doing validation on the e-mail field. I searched the Web for regular expressions used for checking valid email addresses, and the results were amazing! I used a very simple one that if matched opens a "success" alert box, and "failure" otherwise. I would like to in the future implement a tooltip animation.
 
+  * I found myself questioning whether input elements really need to be placed inside form tags. Some of the problems I encountered in implementing event listeners seemed to be complicated by the fact that forms add their own level of functionality to input elements placed inside them, possibly interfering with more customized event handling.
 
-
-## How to Download
-
-#### Part 1 - Forking the Project
-* To _fork_ the project, click the `Fork` button located at the top right of the project.
-
-
-#### Part 2 - Navigating to _forked_ Repository
-* Navigate to your github profile to find the _newly forked repository_.
-* Copy the URL of the project to the clipboard.
-
-#### Part 3 - Cloning _forked_ repository
-* Clone the repository from **your account** into the `~/dev` directory.
-  * if you do not have a `~/dev` directory, make one by executing the following command:
-  * * `mkdir ~/dev`
-  * navigate to the `~/dev` directory by executing the following command:
-  * * `cd ~/dev`
-  * clone the project by executing the following command:
-  * * `git clone https://github.com/${MYUSERNAME}/${NAMEOFPROJECT}`
-
-
-
-
-
-
-## How to Submit
-
-#### Part 1 -  _Pushing_ local changes to remote repository
-* from a _terminal_ navigate to the root directory of the _cloned_ project.
-* from the root directory of the project, execute the following commands:
-  * * add all changes
-  *   * `git add .`
-  * * commit changes to be pushed
-  *   * `git commit -m 'I have added changes'`
-  * * push changes to your repository
-  *   * `git push -u origin master`
-
-#### Part 2 - Submitting assignment
-* from the browser, navigate to the _forked_ project from **your** github account.
-* click the `Pull Requests` tab.
-* select `New Pull Request`
+  * I spent a bulk of my time implementing the API connection functionality and then understanding its semantics, and after that deciding on an interface that would meaningfully present and manipulate information from the source. The park service provides several categories of information such as: parks, campgrounds, things to do, and more. Within each category any number of additional parameters could be supplied. I decided to provide two drop down menus for doing an information search, one for the main categories (such as parks, campgrouds), and other for the more fine-grained parameters within each of the main categories. Since the second set of search parameters is dependent on the first, the selection of dropdown list items in the second list would have to be dynamically populated in accordance to the choice in the first dropdown list. To keep the implementation simple, I chose a second parameter that is common to all of the main category searches; namely, the state (such as NY, SC, NC, etc.). In a nutshell, I dynamically build a query based on the selections by the user from both lists, and I send the result as raw JSON in the pane right below the selection boxes. I implemented the API search using XmlHttpRequest and "fetch". I got both to work, but I ended up using XmlHttpRequest. 
