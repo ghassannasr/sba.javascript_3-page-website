@@ -3,6 +3,9 @@
 
 
 ### General Description & Navigation
+
+* GitHub Pages link: https://ghassannasr.github.io/sba.javascript_3-page-website/
+
 * For this assignment I implemented a 3-page mini website as a celebration of parks in Charleston, SC, and parks in general. 
 
 * I wanted the look and feel of the pages to reflect the vibrance of spring in Charleston ... beautiful blue skies and the colors of cherry and almond blossoms. 
